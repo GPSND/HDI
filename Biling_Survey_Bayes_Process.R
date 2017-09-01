@@ -1,6 +1,7 @@
      prior = function(x) dbeta(x, 15.56689246, 7.051444) 
 likelihood = function(x) dbinom(55, 100, x)
  posterior = function(x) prior(x)*likelihood(x)
+      mode = optimize(posterior, interval = c(0, 1), maximum = TRUE, tol = 1e-12)[[1]]
 
  par(mfcol = c(1, 3), mgp = c(2, .1, 0), mar = c(5, .3, 15, .1), xpd = NA, yaxt = "n", bty = "n", yaxs = "i", lwd = 2, las = 1, font.lab = 2, font = 2)
  
