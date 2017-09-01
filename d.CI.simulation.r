@@ -12,7 +12,6 @@ f <- function (ncp, alpha, q, df) {
   }
     
 a = lapply(14:ifelse(da!= 0, da*sqrt(N)+5, 30), function(x) c(-x, x))
-    
 CI = matrix(NA, length(a), 2)
     
 for(i in 1:length(a)){    
@@ -36,9 +35,7 @@ c(CI = CI.d(da = ds, n1a = n1, n2a = n2, conf.levela = conf.level), ds = ds)
   sim <- t(replicate(n.sim, fun()))
   capture = sim[ ,1] <= d & d <= sim[ ,2]
   
-  original.par = par(no.readonly = TRUE) ; on.exit(par(original.par))
-  par(mgp = c(2, .2, 0), tck = -.015)  
-                
+  par(mgp = c(2, .2, 0), tck = -.015)             
   plot(sim[, 1:2], rep(1:n.sim, 2), ty = "n", ylab = NA, yaxt = "n", xlab = "Effect Size", font.lab = 2)
   axis(1, at = d, col.axis = 2, col = 2, font = 2)
   abline(h = 1:n.sim, col = 8, lty = 3)
