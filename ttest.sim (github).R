@@ -1,5 +1,3 @@
-
-
 ttest = function(n1 = 5, n2 = 5, 
                  min.score = 0, 
                  max.score = 20, 
