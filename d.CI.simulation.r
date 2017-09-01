@@ -50,4 +50,4 @@ c(CI = CI.d(da = ds, n1a = n1, n2a = n2, conf.levela = conf.level), ds = ds)
   noquote(paste0("Coverage = ", mean(capture)*1e2, "%")) 
 }
 # Example of use:
-d.CI.sim(d = .5, n1 = 20, n.sim = 20, ylabel = TRUE)
+d.CI.sim(d = .5, n1 = 30, n2 = 30, n.sim = 20, ylabel = TRUE)
